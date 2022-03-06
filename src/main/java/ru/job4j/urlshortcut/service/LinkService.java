@@ -30,8 +30,9 @@ public class LinkService {
         LinkStat linkStat = stats.getByUrl(link.getUrl().toString());
         if (linkStat == null) {
             linkStat = LinkStat.of(link.getUrl().toString());
+            stats.save(linkStat);
+        } else {
+            stats.update(linkStat);
         }
-        linkStat.incrementCounter();
-        stats.save(linkStat);
     }
 }

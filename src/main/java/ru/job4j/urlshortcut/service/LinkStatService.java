@@ -20,6 +20,10 @@ public class LinkStatService {
         repository.save(linkStat);
     }
 
+    public void update(LinkStat linkStat) {
+        repository.update(linkStat.getUrl());
+    }
+
     public LinkStat getByUrl(String url) {
         return repository.getByUrl(url);
     }

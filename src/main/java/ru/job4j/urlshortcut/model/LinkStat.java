@@ -1,6 +1,7 @@
 package ru.job4j.urlshortcut.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -15,7 +16,7 @@ public class LinkStat {
 
     private String url;
 
-    private int counter;
+    private int counter = 1;
 
     public static LinkStat of(String url) {
         LinkStat linkStat = new LinkStat();
